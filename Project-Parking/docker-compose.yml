@@ -1,0 +1,39 @@
+version: '3.3'
+services:
+  nodered:
+    restart: always
+    image: nodered/node-red:latest
+    ports:
+      - "1880:1880"
+    volumes:
+      - nodered_data:/data
+
+  influxdb:
+    image: influxdb:latest
+    ports:
+      - "8086:8086"
+    environment:
+      INFLUXDB_DB: nodered_db
+      INFLUXDB_USER: admin
+      INFLUXDB_USER_PASSWORD: adminadmin
+
+    volumes:
+      - influxdb_data:/var/lib/influxdb
+
+  grafana:
+    image: grafana/grafana-enterprise
+    ports:
+      - "3001:3000"
+    environment:
+      GF_SECURITY_ADMIN_USER: admin
+      GF_SECURITY_ADMIN_PASSWORD: taranjot
+      GF_USERS_ALLOW_SIGN_UP: "true"
+    volumes:
+      - grafana_data:/var/lib/grafana
+
+volumes:
+  nodered_data:
+  influxdb_data:
+  grafana_data:
+
+

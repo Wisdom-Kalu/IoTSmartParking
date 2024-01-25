@@ -1,0 +1,1044 @@
+[
+    {
+        "id": "0603d99fa36a1047",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "1de6572fbf916509",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "test.mosquitto.org",
+        "port": "1883",
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "879f3be947408ab8",
+        "type": "ui_tab",
+        "name": "IOT PROJECT",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "096576ae7a25e2f3",
+        "type": "ui_group",
+        "name": "Vehicle Size",
+        "tab": "07daee648197bf09",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "c1e2c045fca9ac64",
+        "type": "ui_group",
+        "name": "Available Space & Total",
+        "tab": "07daee648197bf09",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "2dc0dc14f3f75408",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "7bf762ebe193e514",
+        "type": "influxdb",
+        "hostname": "127.0.0.1",
+        "port": "8086",
+        "protocol": "http",
+        "database": "database",
+        "name": "token-final",
+        "usetls": false,
+        "tls": "",
+        "influxdbVersion": "2.0",
+        "url": "http://influxdb:8086",
+        "timeout": "10",
+        "rejectUnauthorized": true
+    },
+    {
+        "id": "6e82bcb6a6fc77e0",
+        "type": "comment",
+        "z": "0603d99fa36a1047",
+        "name": "WARNING: please check you have started this container with a volume that is mounted to /data\\n otherwise any flow changes are lost when you redeploy or upgrade the container\\n (e.g. upgrade to a more recent node-red docker image).\\n  If you are using named volumes you can ignore this warning.\\n Double click or see info side panel to learn how to start Node-RED in Docker to save your work",
+        "info": "\nTo start docker with a bind mount volume (-v option), for example:\n\n```\ndocker run -it -p 1880:1880 -v /home/user/node_red_data:/data --name mynodered nodered/node-red\n```\n\nwhere `/home/user/node_red_data` is a directory on your host machine where you want to store your flows.\n\nIf you do not do this then you can experiment and redploy flows, but if you restart or upgrade the container the flows will be disconnected and lost. \n\nThey will still exist in a hidden data volume, which can be recovered using standard docker techniques, but that is much more complex than just starting with a named volume as described above.",
+        "x": 350,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "63a65a09dc7e71cd",
+        "type": "mqtt in",
+        "z": "0603d99fa36a1047",
+        "name": "",
+        "topic": "/ThinkIOT/parking/data",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "1de6572fbf916509",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 120,
+        "y": 280,
+        "wires": [
+            [
+                "0c1dd0e9fe559313",
+                "f87084efd74d994b"
+            ]
+        ]
+    },
+    {
+        "id": "96c6e6454b232b7a",
+        "type": "mqtt in",
+        "z": "0603d99fa36a1047",
+        "name": "",
+        "topic": "/ThinkIOT/parking/time",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1de6572fbf916509",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 400,
+        "wires": [
+            [
+                "0384068ea5056f84",
+                "5bc5bd386510d22f"
+            ]
+        ]
+    },
+    {
+        "id": "35bce8dd4e72fc9d",
+        "type": "mqtt in",
+        "z": "0603d99fa36a1047",
+        "name": "",
+        "topic": "/ThinkIOT/parking/pay",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1de6572fbf916509",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 280,
+        "y": 460,
+        "wires": [
+            [
+                "a68b7224db5ded76",
+                "1df3866bdf5f9917"
+            ]
+        ]
+    },
+    {
+        "id": "c16a18a10f450817",
+        "type": "mqtt in",
+        "z": "0603d99fa36a1047",
+        "name": "S1",
+        "topic": "/ThinkIOT/parking/S1",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1de6572fbf916509",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 540,
+        "wires": [
+            [
+                "93901dd82739794e",
+                "93c4c98771b81bc7"
+            ]
+        ]
+    },
+    {
+        "id": "73a649e0a1edbc9a",
+        "type": "mqtt in",
+        "z": "0603d99fa36a1047",
+        "name": "S3",
+        "topic": "/ThinkIOT/parking/S3",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1de6572fbf916509",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 680,
+        "wires": [
+            [
+                "1e3d30e159e6f0ae",
+                "98e9b2f180e395c5"
+            ]
+        ]
+    },
+    {
+        "id": "83e0cd527f2cc8a3",
+        "type": "mqtt in",
+        "z": "0603d99fa36a1047",
+        "name": "S4",
+        "topic": "/ThinkIOT/parking/S4",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1de6572fbf916509",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 210,
+        "y": 780,
+        "wires": [
+            [
+                "798da5e0702be62e",
+                "8bfba78f1c6efa22"
+            ]
+        ]
+    },
+    {
+        "id": "7002d24338ecb8e8",
+        "type": "mqtt in",
+        "z": "0603d99fa36a1047",
+        "name": "S5",
+        "topic": "/ThinkIOT/parking/S5",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1de6572fbf916509",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 840,
+        "wires": [
+            [
+                "703d43b431347a1b",
+                "b7e9c80216f7432e"
+            ]
+        ]
+    },
+    {
+        "id": "b3ed6f83dbf3ea52",
+        "type": "mqtt in",
+        "z": "0603d99fa36a1047",
+        "name": "S2",
+        "topic": "/ThinkIOT/parking/S2",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "1de6572fbf916509",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 230,
+        "y": 600,
+        "wires": [
+            [
+                "f11752399190bbb2",
+                "1eb7548144abd0f5"
+            ]
+        ]
+    },
+    {
+        "id": "f87084efd74d994b",
+        "type": "json",
+        "z": "0603d99fa36a1047",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 410,
+        "y": 300,
+        "wires": [
+            [
+                "550905d57e0ddc0a"
+            ]
+        ]
+    },
+    {
+        "id": "5bc5bd386510d22f",
+        "type": "json",
+        "z": "0603d99fa36a1047",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 340,
+        "wires": [
+            [
+                "16a4db716e548f63"
+            ]
+        ]
+    },
+    {
+        "id": "1df3866bdf5f9917",
+        "type": "json",
+        "z": "0603d99fa36a1047",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 510,
+        "y": 460,
+        "wires": [
+            [
+                "3d04f9b5c30cf434"
+            ]
+        ]
+    },
+    {
+        "id": "93c4c98771b81bc7",
+        "type": "json",
+        "z": "0603d99fa36a1047",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": true,
+        "x": 490,
+        "y": 540,
+        "wires": [
+            [
+                "4284d99089da1343"
+            ]
+        ]
+    },
+    {
+        "id": "1eb7548144abd0f5",
+        "type": "json",
+        "z": "0603d99fa36a1047",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": true,
+        "x": 350,
+        "y": 580,
+        "wires": [
+            [
+                "4690c17317cebc5c"
+            ]
+        ]
+    },
+    {
+        "id": "98e9b2f180e395c5",
+        "type": "json",
+        "z": "0603d99fa36a1047",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 390,
+        "y": 660,
+        "wires": [
+            [
+                "01001e8e9eaa7512"
+            ]
+        ]
+    },
+    {
+        "id": "8bfba78f1c6efa22",
+        "type": "json",
+        "z": "0603d99fa36a1047",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": false,
+        "x": 430,
+        "y": 740,
+        "wires": [
+            [
+                "6314a03e02699d02"
+            ]
+        ]
+    },
+    {
+        "id": "b7e9c80216f7432e",
+        "type": "json",
+        "z": "0603d99fa36a1047",
+        "name": "",
+        "property": "payload",
+        "action": "str",
+        "pretty": true,
+        "x": 430,
+        "y": 820,
+        "wires": [
+            [
+                "49e22206c49ec416"
+            ]
+        ]
+    },
+    {
+        "id": "550905d57e0ddc0a",
+        "type": "change",
+        "z": "0603d99fa36a1047",
+        "name": "set parking data ",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "data",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 280,
+        "wires": [
+            [
+                "56902ea4448f1961"
+            ]
+        ]
+    },
+    {
+        "id": "16a4db716e548f63",
+        "type": "change",
+        "z": "0603d99fa36a1047",
+        "name": "set parking time ",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "time",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 700,
+        "y": 340,
+        "wires": [
+            [
+                "56902ea4448f1961"
+            ]
+        ]
+    },
+    {
+        "id": "3d04f9b5c30cf434",
+        "type": "change",
+        "z": "0603d99fa36a1047",
+        "name": "set parking pay",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "pay",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 660,
+        "y": 440,
+        "wires": [
+            [
+                "56902ea4448f1961"
+            ]
+        ]
+    },
+    {
+        "id": "4284d99089da1343",
+        "type": "change",
+        "z": "0603d99fa36a1047",
+        "name": "set space1",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "S1",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 520,
+        "wires": [
+            [
+                "56902ea4448f1961"
+            ]
+        ]
+    },
+    {
+        "id": "4690c17317cebc5c",
+        "type": "change",
+        "z": "0603d99fa36a1047",
+        "name": "set space 2",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "S2",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 570,
+        "y": 580,
+        "wires": [
+            [
+                "56902ea4448f1961"
+            ]
+        ]
+    },
+    {
+        "id": "01001e8e9eaa7512",
+        "type": "change",
+        "z": "0603d99fa36a1047",
+        "name": "set space 3",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "S3",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 550,
+        "y": 660,
+        "wires": [
+            [
+                "56902ea4448f1961"
+            ]
+        ]
+    },
+    {
+        "id": "6314a03e02699d02",
+        "type": "change",
+        "z": "0603d99fa36a1047",
+        "name": "set space 4 ",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "S4",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 630,
+        "y": 740,
+        "wires": [
+            [
+                "56902ea4448f1961"
+            ]
+        ]
+    },
+    {
+        "id": "49e22206c49ec416",
+        "type": "change",
+        "z": "0603d99fa36a1047",
+        "name": "set space 5",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "topic",
+                "pt": "msg",
+                "to": "S5",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 590,
+        "y": 840,
+        "wires": [
+            [
+                "56902ea4448f1961"
+            ]
+        ]
+    },
+    {
+        "id": "56902ea4448f1961",
+        "type": "join",
+        "z": "0603d99fa36a1047",
+        "name": "join all sensor data",
+        "mode": "custom",
+        "build": "object",
+        "property": "payload",
+        "propertyType": "msg",
+        "key": "topic",
+        "joiner": "\\n",
+        "joinerType": "str",
+        "accumulate": true,
+        "timeout": "",
+        "count": "8",
+        "reduceRight": false,
+        "reduceExp": "",
+        "reduceInit": "",
+        "reduceInitType": "",
+        "reduceFixup": "",
+        "x": 980,
+        "y": 580,
+        "wires": [
+            [
+                "6da563c4953cda37",
+                "b3fdcf5d2be71274"
+            ]
+        ]
+    },
+    {
+        "id": "6da563c4953cda37",
+        "type": "function",
+        "z": "0603d99fa36a1047",
+        "name": "function 2",
+        "func": "msg.topic=\"influxdata\"\nvar data =parseInt(msg.payload.data)\nvar time=parseInt(msg.payload.time)\nvar total_payment=parseInt(msg.payload.pay)\nlet space1 = msg.payload[\"/ThinkIOT/parking/S1\"];\nlet space2 = msg.payload[\"/ThinkIOT/parking/S2\"];\nlet space3 = msg.payload[\"/ThinkIOT/parking/S3\"];\nlet space4 = msg.payload[\"/ThinkIOT/parking/S4\"];\nlet space5 = msg.payload[\"/ThinkIOT/parking/S5\"];\n// var space1=(msg.payload.s1)\n// var space2=(msg.payload.s2)\n// var space3=(msg.payload.s3)\n// var space4=(msg.payload.s4)\n// var space5=(msg.payload.s5)\n\nmsg.payload={\n    \"car_size\":data,\n    \"total_time_parked\":time,\n    \"total_payment\":total_payment,\n    \"space1\":space1,\n    \"space2\":space2,\n    \"space3\":space3,\n    \"space4\":space4,\n    \"space5\":space5\n};\n\nreturn msg;\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1180,
+        "y": 380,
+        "wires": [
+            [
+                "42636c244466d351",
+                "46302d439aa7da95"
+            ]
+        ]
+    },
+    {
+        "id": "b3fdcf5d2be71274",
+        "type": "debug",
+        "z": "0603d99fa36a1047",
+        "name": "debug 2",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1020,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "42636c244466d351",
+        "type": "debug",
+        "z": "0603d99fa36a1047",
+        "name": "debug 3",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 880,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "93901dd82739794e",
+        "type": "ui_text",
+        "z": "0603d99fa36a1047",
+        "group": "03db6a529c0b618e",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "name": "S1",
+        "label": "S1",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 350,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "f11752399190bbb2",
+        "type": "ui_text",
+        "z": "0603d99fa36a1047",
+        "group": "03db6a529c0b618e",
+        "order": 4,
+        "width": 0,
+        "height": 0,
+        "name": "S2",
+        "label": "S2",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 610,
+        "y": 620,
+        "wires": []
+    },
+    {
+        "id": "1e3d30e159e6f0ae",
+        "type": "ui_text",
+        "z": "0603d99fa36a1047",
+        "group": "03db6a529c0b618e",
+        "order": 5,
+        "width": 0,
+        "height": 0,
+        "name": "S3",
+        "label": "S3",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 610,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "798da5e0702be62e",
+        "type": "ui_text",
+        "z": "0603d99fa36a1047",
+        "group": "03db6a529c0b618e",
+        "order": 6,
+        "width": 0,
+        "height": 0,
+        "name": "S4",
+        "label": "S4",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 610,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "703d43b431347a1b",
+        "type": "ui_text",
+        "z": "0603d99fa36a1047",
+        "group": "03db6a529c0b618e",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "S5",
+        "label": "S5",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 590,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "a68b7224db5ded76",
+        "type": "ui_text",
+        "z": "0603d99fa36a1047",
+        "group": "03db6a529c0b618e",
+        "order": 7,
+        "width": 0,
+        "height": 0,
+        "name": "Pay",
+        "label": "Total To Pay: $",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 510,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "0384068ea5056f84",
+        "type": "ui_text",
+        "z": "0603d99fa36a1047",
+        "group": "03db6a529c0b618e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "Time",
+        "label": "Total Time Parked (Minutes)",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "className": "",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#000000",
+        "x": 510,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "0c1dd0e9fe559313",
+        "type": "ui_gauge",
+        "z": "0603d99fa36a1047",
+        "name": "Type",
+        "group": "3f3051056cb88498",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "1=Smallest, 5 = Electric",
+        "label": "Size",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "5",
+        "colors": [
+            "#ffffff",
+            "#eec9d0",
+            "#ffe229"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "diff": false,
+        "className": "",
+        "x": 410,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "46302d439aa7da95",
+        "type": "influxdb out",
+        "z": "0603d99fa36a1047",
+        "influxdb": "7bf762ebe193e514",
+        "name": "Influxdb-1",
+        "measurement": "data_1",
+        "precision": "",
+        "retentionPolicy": "",
+        "database": "database",
+        "precisionV18FluxV20": "ms",
+        "retentionPolicyV18Flux": "",
+        "org": "UNIVAQ",
+        "bucket": "bucket-final",
+        "x": 1510,
+        "y": 260,
+        "wires": []
+    }
+]
