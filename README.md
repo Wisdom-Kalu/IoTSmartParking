@@ -57,9 +57,9 @@ Step 5: Use the provided credentials
 
 InfluxDB: http://localhost:8086/
 
-## InfluxDB Username: arshia
+## InfluxDB Username: admin
 
-InfluxDB Password: smartParking
+InfluxDB Password: adminadmin
 
 ## Grafana Credentials
 
@@ -67,7 +67,7 @@ Grafana: http://localhost:3000/
 
 Grafana Username: admin
 
-Grafana Password: admin
+Grafana Password: taranjot
 
 Go to "Smart Parking" Dashboard in the dashboards section.
 
